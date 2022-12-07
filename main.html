@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <!-- https://cdnjs.com/libraries/web3 -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"
+      integrity="sha512-5erpERW8MxcHDF7Xea9eBQPiRtxbse70pFcaHJuOhdEBQeAxGQjUwgJbuBDWve+xP/u5IoJbKjyJk50qCnMD7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-http-client/README.md -->
+    <script src="https://cdn.jsdelivr.net/npm/ipfs-http-client/dist/index.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
+    <!-- 부가적인 테마 -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"
+    />
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/ipfs-http-client/dist/index.min.js"></script>
+    <title>ImageNFT web Generator</title>
+  </head>
+  <body class="container">
+    <div>
+      <div class="form-group">
+        <label for="">current ETH: </label>
+        <span id="eth_balance"></span>
+      </div>
+      <div class="form-group">
+        <label for="">current NFT: </label>
+        <span id="nft_balance"></span>
+      </div>
+      <div class="form-inline">
+        <input
+          class="form-control"
+          type="text"
+          id="pk"
+          placeholder="PRIVATE KEY"
+        />
+        <button class="btn btn-default" id="wallet-import-btn">
+          Bring Wallet
+        </button>
+      </div>
+    </div>
+    <hr />
+    <hr />
+    <div>
+      <div class="form-group">
+        <label for="">Name</label>
+        <input class="form-control" type="text" id="nft-name" />
+      </div>
+      <div class="form-group">
+        <label for="">File</label>
+        <input type="file" id="nft-file" />
+      </div>
+      <button class="btn btn-default" id="nft-gen-btn">MINT NEW NFT</button>
+    </div>
+
+    <hr />
+    <hr />
+    <div>
+      <div class="form-group">
+        <label for="">Token ID</label>
+        <input
+          class="form-control"
+          type="number"
+          id="nft-tokenId"
+          placeholder="Please Input TokenId"
+        />
+      </div>
+      <div>
+        <label for="">Owner address</label>
+        <span id="nft-owner-address-search"></span>
+      </div>
+      <div>
+        <label for="">Name</label>
+        <span id="nft-name-search"></span>
+      </div>
+      <div>
+        <label for="">File Path</label>
+        <span id="ipfs-path-search"></span>
+      </div>
+      <button class="btn btn-default" id="nft-search-btn">Query NFT</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
